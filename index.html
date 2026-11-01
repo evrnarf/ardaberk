@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffb6d0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <title>Bir Sorum Var</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23ff4d8d' d='M1 0h2v1h1V0h2v1h1v2h-1v1h-1v1h-1v1h-1V5H2V4H1V3H0V1h1z'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/pixelify-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/pixelify-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. EKRAN: SORU -->
+  <section id="quiz" class="screen is-active">
+    <div class="float-layer" id="quiz-hearts"></div>
+
+    <div class="dialog" id="dialog">
+      <div class="dialog-hearts" aria-hidden="true">
+        <i class="px-heart"></i><i class="px-heart"></i><i class="px-heart"></i>
+      </div>
+      <h1 class="question">BU AY HANGİ ÇİÇEK AÇAR?</h1>
+
+      <form id="answer-form" autocomplete="off" novalidate>
+        <input id="answer" class="px-input" type="text" name="answer"
+               placeholder="CEVABIN..." maxlength="40"
+               autocomplete="off" autocorrect="off" autocapitalize="characters"
+               spellcheck="false" enterkeyhint="send" aria-label="Cevabın">
+        <button type="submit" class="px-btn">GÖNDER</button>
+      </form>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+    </div>
+
+    <div id="correct-banner" class="correct-banner" aria-hidden="true">DOĞRU!</div>
+  </section>
+
+  <!-- 2. EKRAN: SAHNE -->
+  <section id="scene" class="screen" aria-hidden="true">
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+
+    <div class="float-layer" id="scene-hearts"></div>
+
+    <h2 id="love-text" class="love-text" aria-live="polite"></h2>
+
+    <div class="ground"></div>
+
+    <div id="walker" class="walker">
+      <div id="hero" class="hero">
+        <div class="shadow"></div>
+
+        <div class="side">
+          <img class="leg leg-back" src="assets/img/man-side-leg.png" alt="" draggable="false">
+          <img class="leg leg-front" src="assets/img/man-side-leg.png" alt="" draggable="false">
+          <img class="side-body" src="assets/img/man-side-body.png" alt="" draggable="false">
+        </div>
+
+        <img class="front" src="assets/img/man-front.png" alt="" draggable="false">
+
+        <div id="bouquet" class="bouquet">
+          <img id="bouquet-img" src="assets/img/bouquet-side.png" alt="Çiçek buketi" draggable="false">
+        </div>
+      </div>
+    </div>
+
+    <button id="replay" class="px-btn px-btn-small replay" type="button">TEKRAR</button>
+  </section>
+
+  <div id="fx" class="fx-layer" aria-hidden="true"></div>
+  <div id="fader" class="fader" aria-hidden="true"></div>
+
+  <!-- görselleri önceden yükle -->
+  <div class="preload" aria-hidden="true">
+    <img src="assets/img/bouquet-front.png" alt="">
+  </div>
+
+  <script src="js/sound.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
